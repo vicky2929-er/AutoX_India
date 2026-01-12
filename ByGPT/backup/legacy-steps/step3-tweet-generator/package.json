@@ -1,0 +1,14 @@
+﻿{
+  "name": "step3-tweet-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/runTweetGen.js",
+  "scripts": {
+    "start": "node src/runTweetGen.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "mongodb": "^6.3.0"
+  }
+}

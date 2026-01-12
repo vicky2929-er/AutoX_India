@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ByGPT — Unified Pipeline Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>ByGPT — Unified Pipeline Dashboard</h1>
+<p class="muted">Run steps, see outputs, then copy tweets for manual posting.</p>
+
+<div class="row">
+  <div class="card">
+    <h2>System State</h2>
+    <div id="state" class="muted">Loading…</div>
+    <button id="btnRefreshState">Refresh State</button>
+  </div>
+
+  <div class="card">
+    <h2>Pipeline Runner</h2>
+
+    <div class="step">
+      <div class="stepHeader">
+        <h3>Step 1 — Collect Topics</h3>
+        <button onclick="runStep(1)">Run Step 1</button>
+      </div>
+      <pre id="out1" class="output">—</pre>
+      <pre id="log1" class="logs">—</pre>
+    </div>
+
+    <div class="step">
+      <div class="stepHeader">
+        <h3>Step 2 — Score & Select</h3>
+        <button onclick="runStep(2)">Run Step 2</button>
+      </div>
+      <pre id="out2" class="output">—</pre>
+      <pre id="log2" class="logs">—</pre>
+    </div>
+
+    <div class="step">
+      <div class="stepHeader">
+        <h3>Step 3 — Generate Tweets</h3>
+        <div class="inline">
+          <label class="muted">Mode</label>
+          <select id="step3mode">
+            <option value="ollama">ollama</option>
+            <option value="mock">mock (no AI keys)</option>
+          </select>
+          <button onclick="runStep(3)">Run Step 3</button>
+        </div>
+      </div>
+      <pre id="out3" class="output">—</pre>
+      <pre id="log3" class="logs">—</pre>
+    </div>
+
+    <div class="step">
+      <div class="stepHeader">
+        <h3>Step 4 — Engagement Intel</h3>
+        <button onclick="runStep(4)">Run Step 4</button>
+      </div>
+      <pre id="out4" class="output">—</pre>
+      <pre id="log4" class="logs">—</pre>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="stepHeader">
+    <h2>Final Tweets (Ready)</h2>
+    <button id="btnRefreshTweets">Refresh Tweets</button>
+  </div>
+  <div id="container"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

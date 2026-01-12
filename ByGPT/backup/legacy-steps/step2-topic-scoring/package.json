@@ -1,0 +1,13 @@
+﻿{
+  "name": "step2-topic-scoring",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/runScoring.js",
+  "scripts": {
+    "start": "node src/runScoring.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "mongodb": "^6.3.0"
+  }
+}
